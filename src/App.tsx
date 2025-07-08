@@ -10,28 +10,10 @@ import { Cycles } from './components/Cycles';
 import { DefaultButton } from './components/DefaultButton';
 import { PlayCircleIcon } from 'lucide-react';
 import { Footer } from './components/Footer';
-import { Heading } from './components/Heading';
-import { useState } from 'react';
 
 export function App() {
-  // Que todos componentes que usam "numero"
-  // Saibam das mudanças em seu valor.
-
-  // Sempre que usar useState, não se utiliza atribuição diretamente
-  const [numero, setNumero] = useState(() => {
-    console.log('Lazy initialization');
-    return 0;
-  });
-
-  function handleClick() {
-    setNumero(prevState => prevState + 1);
-  }
-
   return (
     <>
-      <Heading>Número: {numero}</Heading>
-      <button onClick={handleClick}>Aumenta</button>
-
       <Container>
         <Logo />
       </Container>
@@ -48,7 +30,7 @@ export function App() {
         <form className='form' action=''>
           <div className='formRow'>
             <DefaultInput
-              labelText={numero.toString()}
+              labelText='task'
               id='meuInput'
               type='text'
               placeholder='Digite algo'
